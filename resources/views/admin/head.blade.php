@@ -11,4 +11,4 @@
     <link rel="stylesheet" href="{{asset('public/teamplate/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('public/teamplate/admin/dist/css/adminlte.min.css')}}">
-  
+  @yield('head')
