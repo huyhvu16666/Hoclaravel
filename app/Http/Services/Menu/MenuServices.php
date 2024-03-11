@@ -7,7 +7,7 @@ use Illuminate\Support\Str;
 class MenuServices
 {
     public function getParent(){
-        //return Menu::where('paren_id', 0)->get();
+        return Menu::where('paren_id',0)->get();
     }
     public function create($request){
     try{

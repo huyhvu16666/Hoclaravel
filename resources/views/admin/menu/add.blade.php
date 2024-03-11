@@ -12,20 +12,14 @@
             </div>
 
             <div class="form-group">
-                <label for="menu">Danh mục</label>
-                {{-- @foreach ($menus as $menu)
-                ><option value="{{$menu->id}}">{{$menu->name}}</option>
-                    
-                @endforeach --}}
-                <input type="text" name="paren_id" class="form-control" id="paren_id" placeholder="Danh mục cha">
+                <label >Danh mục</label>
+                <select class="from-control" name="paren_id">
+                    <option value="0">Danh mục cha</option>
+                @foreach ($menus as $menu)
+                <option value="{{$menu->id}}">{{$menu->name}}</option>
+                @endforeach
+                </select>
             </div>
-            {{-- <div class="form-group">
-        <label for="menu">Danh mục</label>
-        <select class="from-control" name="parent_id">
-            <option value="0"> Danh mục cha
-
-            </option>
-            </select> --}}
         
 
 
