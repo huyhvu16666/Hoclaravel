@@ -49,12 +49,12 @@
                   <p>Thêm danh mục</p>
                 </a>
               </li>
-                <a href="/admin/menus/add" class="nav-link">
+              <li class="nav-item">
+                <a href="{{route('menu.list')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Danh sách danh mục</p>
                 </a>
               </li>
-              
             </ul>
           </li>
 

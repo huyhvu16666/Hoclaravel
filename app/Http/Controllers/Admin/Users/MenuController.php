@@ -16,7 +16,7 @@ class MenuController extends Controller
     
     public function create() {
         
-         return view('admin.menu.add', [
+         return view('admin.menu.add', [    
              'title' => 'Thêm danh mục mới',
              'menus'=>$this->menuService->getParent()
          ]);
@@ -27,5 +27,11 @@ class MenuController extends Controller
      $this->menuService->create($request);
         // dd($result);
         return redirect()->back();
+    }
+    public function index(){
+        return view('admin.menu.list', [    
+            'title' => 'Danh sách thư  mục mới',
+            'menus'=>$this->menuService->getAll()
+        ]);
     }
 }

@@ -22,6 +22,7 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
      Route::prefix('menus')->group(function(){
          Route::get ('/add',[MenuController::class,'create'])->name('menu.add');
          Route::post ('/add',[MenuController::class,'store'])->name('menu.store');
+         Route::get ('/list',[MenuController::class,'index'])->name('menu.list');
            });
     });;
 });
