@@ -64,3 +64,18 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+  {{-- <li 
+                        class="treeview {{ request()->routeIs('banner.index') || request()->routeIs('banner.create') ? 'active' : '' }}">
+                        <a href="#">
+                            <i class="fa fa-image"></i>
+                            <span>Banners</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li class="{{ request()->routeIs('banner.index') ? 'active' : '' }}"><a
+                                    href="{{ route('banner.index') }}"><i class="fa fa-circle-o"></i>List</a></li>
+                            <li class="{{ request()->routeIs('banner.create') ? 'active' : '' }}"><a
+                                    href="{{ route('banner.create') }}"><i class="fa fa-circle-o"></i>Create</a>
+                            </li>
+                        </ul>
+                    </li>--}}

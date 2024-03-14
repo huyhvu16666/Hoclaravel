@@ -23,6 +23,9 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
          Route::get ('/add',[MenuController::class,'create'])->name('menu.add');
          Route::post ('/add',[MenuController::class,'store'])->name('menu.store');
          Route::get ('/list',[MenuController::class,'index'])->name('menu.list');
+         Route::get ('/edit/{menu}',[MenuController::class,'show'])->name('menu.show');
+         Route::post ('/edit/{menu}',[MenuController::class,'update'])->name('menu.update');
+         Route::DELETE ('/destroy',[MenuController::class,'destroy'])->name('menu.destroy');
            });
     });;
 });

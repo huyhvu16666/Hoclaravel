@@ -4,6 +4,7 @@ use App\Models\Menu;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
+
 class MenuServices
 {
     // public function get($paren_id=1){
@@ -40,4 +41,27 @@ class MenuServices
     }
     return true;
 }
+public function update($request, $menu): bool
+{
+    if ($request->input('paren_id') == $menu->id) {
+        $menu->parent_id = (int) $request->input('paren_id');
+    }
+    $menu->name = (string) $request->input('name');
+    $menu->description = (string) $request->input('description');
+    $menu->content = (string) $request->input('content');
+    $menu->active = $request->input('active'); // Không cần ép kiểu nếu trường active là số nguyên hoặc boolean
+    $menu->save();
+    Session::flash('success', 'Cập nhật thành công danh mục');
+    return true;
+}
+    
+    public function destroy($request){
+        $id=(int)$request->input('id');
+        $menu= Menu:: where('id',$id)->first();
+
+        if($menu){
+            return Menu::where('id',$id)->orWhere('paren_id',$id)->delete();
+        }
+        return false;
+    }
 }

@@ -11,4 +11,5 @@
     <link rel="stylesheet" href="{{asset('public/teamplate/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('public/teamplate/admin/dist/css/adminlte.min.css')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
   @yield('head')

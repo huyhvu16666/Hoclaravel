@@ -5,6 +5,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Menu\CreateFromRquest;
 use Illuminate\Http\Request;
 use App\Http\Services\Menu\MenuServices;
+use App\Models\Menu;
+use Illuminate\Http\JsonResponse;
+
 class MenuController extends Controller
 {
     protected $menuService;
@@ -34,4 +37,31 @@ class MenuController extends Controller
             'menus'=>$this->menuService->getAll()
         ]);
     }
+    public function show(Menu $menu){
+      
+        return view('admin.menu.edit', [
+            'title' => 'Chỉnh sửa danh mục ' . $menu->name,
+            'menu' => $menu,
+            'menus' => $this->menuService->getParent()
+        ]);
+    
+    }
+    public function update(Menu $menu,CreateFromRquest $request){
+        $this->menuService->update($request, $menu);
+        return redirect('/admin/menus/list');
+    }
+    public function destroy(Request $request): JsonResponse
+    {
+        $result=$this->menuService->destroy($request);
+        if($result){
+            return response()->json([
+                'error'=>false,
+                'message'=>'Xóa thành công danh mục'
+            ]);
+
+        }
+        return response()->json([
+            'error'=>true
+        ]);
+}
 }
