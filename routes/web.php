@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\Admin\Users\MenuController;
 use App\Http\Controllers\Admin\MainController;
+
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
 //chỉ cần gõ nó sẽ gợi ý
@@ -26,6 +28,17 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
          Route::get ('/edit/{menu}',[MenuController::class,'show'])->name('menu.show');
          Route::post ('/edit/{menu}',[MenuController::class,'update'])->name('menu.update');
          Route::DELETE ('/destroy',[MenuController::class,'destroy'])->name('menu.destroy');
+           });
+           #product
+     Route::prefix('products')->group(function(){
+        Route::get ('/add',[ProductController::class,'create'])->name('product.add');
+        Route::post('add', [ProductController::class, 'store'])->name('product.store');
+        Route::get('list', [ProductController::class, 'index'])->name('product.list');
+        Route::get('edit/{product}', [ProductController::class, 'show'])->name('product.show');
+        Route::post('edit/{product}', [ProductController::class, 'update'])->name('product.update');
+        Route::DELETE('destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+            #upload
+
            });
     });;
 });

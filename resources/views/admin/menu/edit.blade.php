@@ -1,6 +1,6 @@
 @extends('admin.users.main')
 @section('head')
-    <script src="{{ asset('/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('/public/ckeditor/ckeditor.js') }}"></script>
 @endsection
 @section('content')
     <form action="{{ route('menu.store') }}" method="POST" enctype="multipart/form-data">

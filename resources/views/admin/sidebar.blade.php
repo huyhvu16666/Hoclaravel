@@ -36,7 +36,7 @@
                with font-awesome or any other icon font library -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-solid fa-list"></i>
               <p>
                 Danh Mục
                 <i class="right fas fa-angle-left"></i>
@@ -57,6 +57,29 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-store-alt"></i>
+                <p> Sản Phẩm
+                    <i class="right fas fa-angle-left"></i>
+                </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="{{route('product.add')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Thêm Sản Phẩm</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{route('product.list')}}" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Danh Sách Sản Phẩm</p>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
 
         </ul>
       </nav>
