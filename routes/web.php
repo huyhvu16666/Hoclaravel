@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\UploadController;
 use Illuminate\Support\Facades\Route;
 
 //chỉ cần gõ nó sẽ gợi ý
@@ -38,7 +39,7 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
         Route::post('edit/{product}', [ProductController::class, 'update'])->name('product.update');
         Route::DELETE('destroy', [ProductController::class, 'destroy'])->name('product.destroy');
             #upload
-
+            Route::post('upload/services', [UploadController::class, 'store'])->name('upload.store');
            });
     });;
 });
