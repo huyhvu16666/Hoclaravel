@@ -89,13 +89,13 @@
           </a>
           <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('slider.add')}}" class="nav-link">
+                <a href="/hoclaravel/admin/sliders/add" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Thêm Slider</p>
                   </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('product.list')}}" class="nav-link">
+                <a href="/hoclaravel/admin/sliders/list" class="nav-link">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Danh Sách Slider</p>
                   </a>
@@ -110,18 +110,3 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-  {{-- <li 
-                        class="treeview {{ request()->routeIs('banner.index') || request()->routeIs('banner.create') ? 'active' : '' }}">
-                        <a href="#">
-                            <i class="fa fa-image"></i>
-                            <span>Banners</span>
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li class="{{ request()->routeIs('banner.index') ? 'active' : '' }}"><a
-                                    href="{{ route('banner.index') }}"><i class="fa fa-circle-o"></i>List</a></li>
-                            <li class="{{ request()->routeIs('banner.create') ? 'active' : '' }}"><a
-                                    href="{{ route('banner.create') }}"><i class="fa fa-circle-o"></i>Create</a>
-                            </li>
-                        </ul>
-                    </li>--}}

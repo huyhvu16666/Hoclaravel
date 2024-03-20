@@ -52,7 +52,7 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
         });
             #upload
     
-    Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
+    Route::post('upload/services', [UploadController::class, 'store'])->name('upload.store');
     });
  
 });
