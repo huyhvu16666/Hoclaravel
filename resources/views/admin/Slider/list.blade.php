@@ -20,8 +20,8 @@
                 <td>{{ $slider->id }}</td>
                 <td>{{ $slider->name }}</td>
                 <td>{{ $slider->url }}</td>
-                <td><a href="{{ $slider->thumb }}" target="_blank">
-                        <img src="{{ $slider->thumb }}" height="40px">
+                <td><a href="/hoclaravel/public{{ $slider->thumb }}" target="_blank">
+                        <img src="/hoclaravel/public/{{ $slider->thumb }}" height="40px">
                     </a>
                 </td>
                 <td>{!! \App\Helpers\Helper::active($slider->active) !!}</td>
