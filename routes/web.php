@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\MainController;
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\Slidercontroller;
 use App\Http\Controllers\Admin\UploadController;
 use Illuminate\Support\Facades\Route;
 
@@ -38,9 +39,21 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
         Route::get('edit/{product}', [ProductController::class, 'show'])->name('product.show');
         Route::post('edit/{product}', [ProductController::class, 'update'])->name('product.update');
         Route::DELETE('destroy', [ProductController::class, 'destroy'])->name('product.destroy');
-            #upload
-            Route::post('upload/services', [UploadController::class, 'store'])->name('upload.store');
+          
            });
-    });;
+           #Slider
+        Route::prefix('sliders')->group(function () {
+            Route::get('add', [SliderController::class, 'create'])->name('slider.add');
+            Route::post('add', [SliderController::class, 'store'])->name('slider.store');
+            Route::get('list', [SliderController::class, 'index'])->name('slider.list');
+            Route::get('edit/{slider}', [SliderController::class, 'show'])->name('slider.show');
+            Route::post('edit/{slider}', [SliderController::class, 'update'])->name('slider.update');
+            Route::DELETE('destroy', [SliderController::class, 'destroy'])->name('slider.destroy');
+        });
+            #upload
+    
+    Route::post('/upload', [UploadController::class, 'store'])->name('upload.store');
+    });
+ 
 });
 

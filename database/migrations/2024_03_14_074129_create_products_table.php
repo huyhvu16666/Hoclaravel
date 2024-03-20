@@ -17,8 +17,8 @@ return new class extends Migration
             $table->text('description');
             $table->longText('content');
             $table->unsignedBigInteger('menu_id'); // Assuming menu_id is the foreign key referencing the id column in the menus table
-            $table->integer('price');
-            $table->integer('price_sale');
+            $table->integer('price')->nullable();
+            $table->integer('price_sale')->nullable();
             $table->integer('active');
             $table->timestamps();
             
