@@ -52,6 +52,6 @@
 </div>
 
 
-@include('admin.users.footer')
+@include('admin.footer')
 </body>
 </html>
