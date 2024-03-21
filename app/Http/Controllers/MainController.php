@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\menu\MenuService;
 use Illuminate\Http\Request;
 use App\Http\Services\Slider\SliderService;
-use App\Http\Services\menu\MenuService;
-use App\Http\Services\Menu\MenuServices;
+
 use App\Http\Services\Product\ProductService;
 
 class MainController extends Controller
@@ -14,7 +14,7 @@ class MainController extends Controller
     protected $menu;
     protected $product;
 
-    public function __construct(SliderService $slider, MenuServices $menu,
+    public function __construct(SliderService $slider,MenuService  $menu,
         ProductService $product)
     {
         $this->slider = $slider;
@@ -26,7 +26,9 @@ class MainController extends Controller
     {
         return view('home', [
             'title' => 'Shop Nước Hoa ABC',
-            
+            'sliders' => $this->slider->show(),
+            'menus' => $this->menu->show(),
+            'products' => $this->product->get()
         ]);
     }
 

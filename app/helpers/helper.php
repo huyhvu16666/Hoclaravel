@@ -1,6 +1,8 @@
 <?php
 namespace App\helpers;
+use Illuminate\Support\Str;
 class helper
+
 {
 public static function menu($menus, $paren_id = 0, $char = '') {
     $html = '';

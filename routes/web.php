@@ -1,20 +1,21 @@
 <?php
 
 use App\Http\Controllers\Admin\MenuController;
-use App\Http\Controllers\MainController;
+use App\Http\Controllers\Admin\MainController;
 
 use App\Http\Controllers\Admin\Users\LoginController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\Slidercontroller;
 use App\Http\Controllers\Admin\UploadController;
+
 use Illuminate\Support\Facades\Route;
 
 //chỉ cần gõ nó sẽ gợi ý
 
 Route::get('admin/users/login', [LoginController::class, 'login'])->name('route.login');
 Route::post('admin/users/login/store', [LoginController::class, 'store'])->name('route.store');
-// Route::get('/index', [MainController::class, 'index'])->name('route.admin');
+
 //middleware tịnh tuyển route
 
 Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... auth => dùng để check
@@ -57,4 +58,4 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
  
 });
 #giao dien
-    Route::get('/home',[MainController::class, 'index']);
+    Route::get('home', [App\Http\Controllers\MainController::class, 'index'] );
