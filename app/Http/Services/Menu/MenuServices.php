@@ -8,9 +8,9 @@ use App\Models\Menu;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
-class MenuService
+class MenuServices
 {
-    public function getParen()
+    public function getParent()
     {
         return Menu::where('paren_id', 0)->get();
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Services\menu\MenuService;
+use App\Http\Services\menu\MenuServices;
 use Illuminate\Http\Request;
 use App\Http\Services\Slider\SliderService;
 
@@ -14,7 +14,7 @@ class MainController extends Controller
     protected $menu;
     protected $product;
 
-    public function __construct(SliderService $slider,MenuService  $menu,
+    public function __construct(SliderService $slider,MenuServices  $menu,
         ProductService $product)
     {
         $this->slider = $slider;
