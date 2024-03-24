@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\Slidercontroller;
 use App\Http\Controllers\Admin\UploadController;
-
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 //chỉ cần gõ nó sẽ gợi ý
@@ -56,6 +56,9 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
     Route::post('upload/services', [UploadController::class, 'store'])->name('upload.store');
     });
  
+    #cart
+        Route::get('customers', [CartController::class, 'index']);
+        Route::get('customers/view/{customer}', [CartController::class, 'show']);
 });
 #giao dien
     Route::get('home', [App\Http\Controllers\MainController::class, 'index'] );

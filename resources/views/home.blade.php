@@ -1,4 +1,4 @@
-@extends('main')
+{{-- @extends('main')
 
 @section('content')
     <!-- Slider -->
@@ -103,4 +103,4 @@
             </div>
         </div>
     </section>
-@endsection
+@endsection --}}
