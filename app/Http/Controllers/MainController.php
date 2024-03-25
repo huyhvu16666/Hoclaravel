@@ -28,7 +28,7 @@ class MainController extends Controller
             'title' => 'Shop Nước Hoa ABC',
             'sliders' => $this->slider->show(),
             'menus' => $this->menu->show(),
-//             'products' => $this->product->get()
+            'products' => $this->product->get()
        ]);
    }
 
