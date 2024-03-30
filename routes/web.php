@@ -19,7 +19,6 @@ Route::post('admin/users/login/store', [LoginController::class, 'store'])->name(
 //middleware tịnh tuyển route
 
 Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... auth => dùng để check
-
     Route::prefix('admin')->group(function(){
         Route::get('/index',[MainController::class,'index'])->name('route.admin');
         Route::get ('/main',[MainController::class,'index']);

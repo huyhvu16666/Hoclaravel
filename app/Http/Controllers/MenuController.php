@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Services\Menu\MenuService;
 use App\Http\Services\Menu\MenuServices;
 use App\Http\Services\Slider\SliderService;
 
@@ -19,14 +20,15 @@ class MenuController extends Controller
 
     public function index(Request $request, $id, $slug = '')
     {
-        $menu = $this->menuService->show();
+        $menu = $this->menuService->getId($id);
         $products = $this->menuService->getProduct($menu, $request);
 
-        return view('menu', [
+        $data = [
             'title' => $menu->name,
             'sliders' => $this->slider->show(),
             'products' => $products,
-            'menus'  => $menu
-        ]);
+            'menus' => $menu->get()
+        ];
+        return view('menu')->with($data);
     }
 }
