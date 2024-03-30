@@ -26,9 +26,11 @@
 <html lang="en">
 <head>
     @include('head')
+
+	
 </head>
 <body class="animsition">
-	
+
 	<!-- Header -->
 	<header>
 		@include('header')
@@ -42,8 +44,9 @@
 	<section class="section-slide">
 		<div class="wrap-slick1">
 			<div class="slick1">
-				@foreach($sliders as $slider)
-				<div class="item-slick1" style="background-image: url(/hoclaravel/public{{$slider->thumb}});">
+				{{-- @foreach($sliders as $slider)
+				
+				<div class="item-slick1" style="background-image: url('/hoclaravel/public{{$slider->thumb}}');">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
@@ -51,13 +54,13 @@
 									HOT 2024
 								</span>
 							</div>
-								
+			
 							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
 								<h2 class="ltext-201 cl2 p-t-19 p-b-43 respon1">
-								{{$slider->name}}
+									{{$slider->name}}
 								</h2>
 							</div>
-								
+			
 							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
 								<a href="{{$slider->url}}" class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Shop Now
@@ -66,7 +69,8 @@
 						</div>
 					</div>
 				</div>
-			@endforeach
+				@endforeach --}}
+
 				<div class="item-slick1" style="background-image: url({{asset('public/teamplate/images/slide-02.jpg')}});">
 					<div class="container h-full">
 						<div class="flex-col-l-m h-full p-t-100 p-b-30 respon5">
@@ -919,15 +923,19 @@
 					</div>
 				</div>
 			</div>
-
-			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Load More
-				</a>
-			</div>
-		</div>
+			<div id="loadProduct">
+                @include('products.list')
+            </div>
+			   <!-- Load more -->
+			   <div class="flex-c-m flex-w w-full p-t-45" id="button-loadMore">
+                <input type="hidden" value="1" id="page">
+                <a onclick="loadMore()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+                    Load More
+                </a>
+            </div>
+        </div>
 	</section>
+
 
     @include('footer')
 	

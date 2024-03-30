@@ -819,3 +819,4 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </script>
 <!--===============================================================================================-->
 <script src="{{asset('public/teamplate/js/main.js')}}"></script>
+<script src="{{asset('public/teamplate/js/public.js')}}"></script>

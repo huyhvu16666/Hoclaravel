@@ -41,13 +41,12 @@ public static function menus($menus, $paren_id = 0) :string
     {
         $html = '';
         foreach ($menus as $key => $menu) {
-            if ($menu->parent_id == $paren_id) {
+            if ($menu->paren_id == $paren_id) {
                 $html .= '
                     <li>
-                        <a href="/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') . '.html">
-                            ' . $menu->name . '
-                        </a>';
-
+                    <a href="/hoclaravel/danh-muc/' . $menu->id . '-' . Str::slug($menu->name, '-') . '.html"> 
+                    ' . $menu->name . '
+                </a>';
                 unset($menus[$key]);
 
                 if (self::isChild($menus, $menu->id)) {
@@ -66,7 +65,7 @@ public static function menus($menus, $paren_id = 0) :string
     public static function isChild($menus, $id) : bool
     {
         foreach ($menus as $menu) {
-            if ($menu->parent_id == $id) {
+            if ($menu->paren_id == $id) {
                 return true;
             }
         }

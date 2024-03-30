@@ -62,3 +62,7 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
 });
 #giao dien
     Route::get('home', [App\Http\Controllers\MainController::class, 'index'] );
+#lodgiaodien
+Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
+Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
+Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);

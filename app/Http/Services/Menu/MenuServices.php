@@ -96,4 +96,5 @@ class MenuServices
             ->paginate(12)
             ->withQueryString();
     }
+    
 }
