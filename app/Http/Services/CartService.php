@@ -73,41 +73,41 @@ class CartService
         return true;
     }
 
-    // public function addCart($request)
-    // {
-    //     try {
-    //         DB::beginTransaction();
+    public function addCart($request)
+    {
+        try {
+            DB::beginTransaction();
 
-    //         $carts = Session::get('carts');
+            $carts = Session::get('carts');
 
-    //         if (is_null($carts))
-    //             return false;
+            if (is_null($carts))
+                return false;
 
-            // $customer = Customer::create([
-            //     'name' => $request->input('name'),
-            //     'phone' => $request->input('phone'),
-            //     'address' => $request->input('address'),
-            //     'email' => $request->input('email'),
-            //     'content' => $request->input('content')
-            // ]);
+            $customer = Customer::create([
+                'name' => $request->input('name'),
+                'phone' => $request->input('phone'),
+                'address' => $request->input('address'),
+                'email' => $request->input('email'),
+                'content' => $request->input('content')
+            ]);
 
-    //         $this->infoProductCart($carts, $customer->id);
+            $this->infoProductCart($carts, $customer->id);
 
-    //         DB::commit();
-    //         Session::flash('success', 'Đặt Hàng Thành Công');
+            DB::commit();
+            Session::flash('success', 'Đặt Hàng Thành Công');
 
-    //         #Queue
-    //         SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
+            #Queue
+            // SendMail::dispatch($request->input('email'))->delay(now()->addSeconds(2));
 
-    //         Session::forget('carts');
-    //     } catch (\Exception $err) {
-    //         DB::rollBack();
-    //         Session::flash('error', 'Đặt Hàng Lỗi, Vui lòng thử lại sau');
-    //         return false;
-    //     }
+            Session::forget('carts');
+        } catch (\Exception $err) {
+            DB::rollBack();
+            Session::flash('error', 'Đặt Hàng Lỗi, Vui lòng thử lại sau');
+            return false;
+        }
 
-    //     return true;
-    // }
+        return true;
+    }
 
     protected function infoProductCart($carts, $customer_id)
     {
@@ -130,10 +130,10 @@ class CartService
         return Cart::insert($data);
     }
 
-    // public function getCustomer()
-    // {
-    //     return Customer::orderByDesc('id')->paginate(15);
-    // }
+    public function getCustomer()
+    {
+        return Customer::orderByDesc('id')->paginate(15);
+    }
 
     public function getProductForCart($customer)
     {

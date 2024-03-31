@@ -31,7 +31,7 @@
                                         <tr class="table_row">
                                             <td class="column-1">
                                                 <div class="how-itemcart1">
-                                                    <img src="{{ $product->thumb }}" alt="IMG">
+                                                    <img src="/hoclaravel/public/{{ $product->thumb }}" alt="IMG">
                                                 </div>
                                             </td>
                                             <td class="column-2">{{ $product->name }}</td>
@@ -52,7 +52,7 @@
                                             </td>
                                             <td class="column-5">{{ number_format($priceEnd, 0, '', '.') }}</td>
                                             <td class="p-r-15">
-                                                <a href="/carts/delete/{{ $product->id }}">Xóa</a>
+                                                <a href="{{route('route.delete')}}{{ $product->id }}">Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -71,7 +71,7 @@
                                     </div>
                                 </div>
 
-                                <input type="submit" value="Update Cart" formaction="/update-cart"
+                                <input type="submit" value="Update Cart" formaction="{{route('route.update')}}"
                                     class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
                                 @csrf
                             </div>

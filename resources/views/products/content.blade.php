@@ -7,7 +7,7 @@
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
             </a>
 
-            <a href="/danh-muc/{{ $product->menu->id }}-{{ Str::slug($product->menu->name) }}.html"
+            <a href="hoclravel/danh-muc/{{ $product->menu->id }}-{{ Str::slug($product->menu->name) }}.html"
                class="stext-109 cl8 hov-cl1 trans-04">
                 {{ $product->menu->name }}
                 <i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
@@ -28,7 +28,7 @@
                             <div class="wrap-slick3-dots">
                                 <ul class="slick3-dots" style="" role="tablist">
                                     <li class="slick-active" role="presentation">
-                                        <img src="{{ $product->thumb }}">
+                                        <img src="/hoclaravel/public/{{ $product->thumb }}">
                                         <div class="slick3-dot-overlay"></div>
                                     </li>
                                 </ul>
@@ -44,16 +44,16 @@
                                 <div class="slick-list draggable">
                                     <div class="slick-track" style="opacity: 1; width: 1539px;">
                                         <div class="item-slick3 slick-slide slick-current slick-active"
-                                             data-thumb="images/product-detail-01.jpg" data-slick-index="0"
+                                             data-thumb="{{asset('public/teamplate/images/product-detail-01.jpg')}}" data-slick-index="0"
                                              aria-hidden="false"
                                              style="width: 513px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
                                              tabindex="0" role="tabpanel" id="slick-slide10"
                                              aria-describedby="slick-slide-control10">
                                             <div class="wrap-pic-w pos-relative">
-                                                <img src="{{ $product->thumb }}" alt="IMG-PRODUCT">
+                                                <img src="/hoclaravel/public/{{ $product->thumb }}" alt="IMG-PRODUCT">
 
                                                 <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                                   href="images/product-detail-01.jpg" tabindex="0">
+                                                   href="{{asset('public/teamplate/images/product-detail-01.jpg')}}" tabindex="0">
                                                     <i class="fa fa-expand"></i>
                                                 </a>
                                             </div>
@@ -86,7 +86,7 @@
                         <div class="p-t-33">
                             <div class="flex-w flex-r-m p-b-10">
                                 <div class="size-204 flex-w flex-m respon6-next">
-                                    <form action="/add-cart" method="post">
+                                    <form action="hoclaravel/add-cart" method="post">
                                         @if ($product->price !== NULL)
                                             <div class="wrap-num-product flex-w m-r-20 m-tb-10">
                                                 <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -240,7 +240,7 @@
                                         <!-- Review -->
                                         <div class="flex-w flex-t p-b-68">
                                             <div class="wrap-pic-s size-109 bor0 of-hidden m-r-18 m-t-6">
-                                                <img src="images/avatar-01.jpg" alt="AVATAR">
+                                                <img src="{{asset('public/teamplate/images/avatar-01.jpg')}}" alt="AVATAR">
                                             </div>
 
                                             <div class="size-207">
