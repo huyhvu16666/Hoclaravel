@@ -86,7 +86,7 @@
                         <div class="p-t-33">
                             <div class="flex-w flex-r-m p-b-10">
                                 <div class="size-204 flex-w flex-m respon6-next">
-                                    <form action="hoclaravel/add-cart" method="post">
+                                    <form action="/hoclaravel/addcart" method="post">
                                         @if ($product->price !== NULL)
                                             <div class="wrap-num-product flex-w m-r-20 m-tb-10">
                                                 <div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m">
@@ -102,7 +102,7 @@
                                             </div>
 
 
-                                            <button type="submit"
+                                            <button type="submit" 
                                                     class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
                                                 Add to cart
                                             </button>

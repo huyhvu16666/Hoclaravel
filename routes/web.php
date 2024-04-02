@@ -56,7 +56,7 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
     });
  
     #cart
-        Route::get('customers', [CartController::class, 'index']);
+        Route::get('customers', [CartController::class, 'index'])->name('dsdh');
         Route::get('customers/view/{customer}', [CartController::class, 'show']);
 });
 #giao dien
@@ -65,8 +65,8 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
 Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
 Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
-Route::post('add-cart', [App\Http\Controllers\CartController::class, 'index'])->name('route.cart');
+Route::post('addcart', [App\Http\Controllers\CartController::class, 'index'])->name('route.cart');
 Route::get('carts', [App\Http\Controllers\CartController::class, 'show'])->name('route.show');
-Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update'])->name('route.update');
+Route::post('updatecart', [App\Http\Controllers\CartController::class, 'update'])->name('route.update');
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove'])->name('route.delete');
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart'])->name('route.add');

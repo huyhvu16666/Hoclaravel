@@ -52,7 +52,7 @@
                                             </td>
                                             <td class="column-5">{{ number_format($priceEnd, 0, '', '.') }}</td>
                                             <td class="p-r-15">
-                                                <a href="{{route('route.delete')}}{{ $product->id }}">Xóa</a>
+                                                <a href="/updatecart{{ $product->id }}">Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach
