@@ -3,11 +3,11 @@
 <header>
 @php $menusHtml = \App\Helpers\Helper::menus($menus); @endphp
 <div class="container-menu-desktop">
-    <!-- Topbar -->
+    {{-- <!-- Topbar -->
     <div class="top-bar">
         <div class="content-topbar flex-sb-m h-full container">
             <div class="left-top-bar">
-                Free shipping for standard order over $100
+                
             </div>
 
             <div class="right-top-bar flex-w h-full">
@@ -28,26 +28,26 @@
                 </a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <div class="wrap-menu-desktop">
         <nav class="limiter-menu-desktop container">
             
             <!-- Logo desktop -->		
             <a href="http://localhost:8012/hoclaravel/home" class="logo">
-                <img src="{{asset('public/teamplate/images/icons/logo-01.png')}}" alt="IMG-LOGO">
+                <img src="{{asset('public/teamplate/images/icons/logo.jpg')}}" alt="IMG-LOGO">
             </a>
 
            
                 <!-- Menu desktop -->
                 <div class="menu-desktop">
                     <ul class="main-menu">
-                        <li class="active-menu"><a href="http://localhost:8012/hoclaravel/home">Trang Chủ</a> </li>
+                        <li class="active-menu"><a href="http://localhost:8012/hoclaravel/home">Sale</a> </li>
 
                         {!! $menusHtml !!}
 
                         <li>
-                            <a href="contact.html">Liên Hệ</a>
+                            <a href="contact.html">Tin tức</a>
                         </li>
                     </ul>
                 </div>
@@ -100,12 +100,12 @@
     <ul class="topbar-mobile">
         <div class="menu-desktop">
             <ul class="main-menu">
-                <li class="active-menu"><a href="/">Trang Chủ</a> </li>
+                <li class="active-menu"><a href="/">Sale</a> </li>
 
                  {!! $menusHtml !!} 
 
                 <li>
-                    <a href="contact.html">Liên Hệ</a>
+                    <a href="contact.html">Tin tức</a>
                 </li>
             </ul>
         </div>
