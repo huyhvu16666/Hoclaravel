@@ -5,6 +5,9 @@
             <div class="block2">
                 <div class="block2-pic hov-img0">
                     <img src="/hoclaravel/public{{ $product->thumb }}" alt="{{ $product->name }}">
+                    <a href="/hoclaravel/addcart" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+                        Mua Ngay
+                    </a>
                 </div>
 
                 <div class="block2-txt flex-w flex-t p-t-14">
