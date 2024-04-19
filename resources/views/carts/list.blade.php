@@ -52,7 +52,7 @@
                                             </td>
                                             <td class="column-5">{{ number_format($priceEnd, 0, '', '.') }}</td>
                                             <td class="p-r-15">
-                                                <a href="/updatecart{{ $product->id }}">Xóa</a>
+                                                <a href="{{ route('route.delete', ['id' => $product->id]) }}">Xóa</a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -63,11 +63,12 @@
                             <div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
                                 <div class="flex-w flex-m m-r-20 m-tb-5">
                                     <input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
-                                           name="coupon" placeholder="Coupon Code">
+                                           name="coupon" placeholder="Mã giảm giá">
 
                                     <div
                                         class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
-                                        Apply coupon
+                                        Áp dụng phiếu giảm giá
+
                                     </div>
                                 </div>
 
@@ -108,23 +109,23 @@
                                         </span>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" placeholder="Tên khách Hàng" required>
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="name" required placeholder="Tên khách Hàng" required>
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" placeholder="Số Điện Thoại" required>
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="phone" required placeholder="Số Điện Thoại" required>
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" placeholder="Địa Chỉ Giao Hàng">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="address" required placeholder="Địa Chỉ Giao Hàng">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="email" placeholder="Email Liên Hệ">
+                                            <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="email" name="email" required placeholder="Email Liên Hệ">
                                         </div>
 
                                         <div class="bor8 bg0 m-b-12">
-                                            <textarea class="cl8 plh3 size-111 p-lr-15" name="content"></textarea>
+                                            <textarea class="cl8 plh3 size-111 p-lr-15" name="content" required placeholder="Nhập ghi chú"></textarea>
                                         </div>
 
                                     </div>
@@ -141,5 +142,6 @@
     </form>
     @else
         <div class="text-center"><h2>Giỏ hàng trống</h2></div>
+        
     @endif
 @endsection

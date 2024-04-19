@@ -27,8 +27,8 @@
                         <div class="wrap-slick3 flex-sb flex-w">
                             <div class="wrap-slick3-dots">
                                 <ul class="slick3-dots" style="" role="tablist">
-                                    <li class="slick-active" role="presentation">
-                                        <img src="/hoclaravel/public/{{ $product->thumb }}">
+                                    <li class="slick-active" role="presentation" >
+                                        <img src="/hoclaravel/public/{{ $product->thumb }}"  alt="{{ $product->name}}" >
                                         <div class="slick3-dot-overlay"></div>
                                     </li>
                                 </ul>
@@ -44,16 +44,17 @@
                                 <div class="slick-list draggable">
                                     <div class="slick-track" style="opacity: 1; width: 1539px;">
                                         <div class="item-slick3 slick-slide slick-current slick-active"
-                                             data-thumb="{{asset('public/teamplate/images/product-detail-01.jpg')}}" data-slick-index="0"
+                                             data-thumb="/hoclaravel/public/{{ $product->thumb }}"  alt="{{ $product->name}}"
+                                             data-slick-index="0"
                                              aria-hidden="false"
                                              style="width: 513px; position: relative; left: 0px; top: 0px; z-index: 999; opacity: 1;"
                                              tabindex="0" role="tabpanel" id="slick-slide10"
-                                             aria-describedby="slick-slide-control10">
+                                             aria-describedby="slick-slide-control10" >
                                             <div class="wrap-pic-w pos-relative">
-                                                <img src="/hoclaravel/public/{{ $product->thumb }}" alt="IMG-PRODUCT">
+                                                <img src="/hoclaravel/public/{{ $product->thumb }}" alt="{{$product->name}}">
 
                                                 <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"
-                                                   href="{{asset('public/teamplate/images/product-detail-01.jpg')}}" tabindex="0">
+                                                   href="/hoclaravel/public/{{ $product->thumb }}"  alt="{{ $product->name}}" >
                                                     <i class="fa fa-expand"></i>
                                                 </a>
                                             </div>
@@ -103,8 +104,7 @@
 
 
                                             <button type="submit" 
-                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">
-                                                Add to cart
+                                                    class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 ">Add to cart
                                             </button>
                                             <input type="hidden" name="product_id" value="{{ $product->id }}">
                                         @endif
@@ -149,16 +149,15 @@
                     <!-- Nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item p-b-10">
-                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
+                            <a class="nav-link active" data-toggle="tab" href="#description" role="tab">Miêu tả sản phẩm</a>
                         </li>
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional
-                                information</a>
+                            <a class="nav-link" data-toggle="tab" href="#information" role="tab">Thông tin sản phẩm</a>
                         </li>
 
                         <li class="nav-item p-b-10">
-                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews (1)</a>
+                            <a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Đánh giá (1)</a>
                         </li>
                     </ul>
 
@@ -180,7 +179,7 @@
                                     <ul class="p-lr-28 p-lr-15-sm">
                                         <li class="flex-w flex-t p-b-7">
 											<span class="stext-102 cl3 size-205">
-												Weight
+												Cân Nặng
 											</span>
 
                                             <span class="stext-102 cl6 size-206">
@@ -190,7 +189,7 @@
 
                                         <li class="flex-w flex-t p-b-7">
 											<span class="stext-102 cl3 size-205">
-												Dimensions
+												Kích thước
 											</span>
 
                                             <span class="stext-102 cl6 size-206">
@@ -200,7 +199,7 @@
 
                                         <li class="flex-w flex-t p-b-7">
 											<span class="stext-102 cl3 size-205">
-												Materials
+												Nguyên liệu
 											</span>
 
                                             <span class="stext-102 cl6 size-206">
@@ -246,7 +245,7 @@
                                             <div class="size-207">
                                                 <div class="flex-w flex-sb-m p-b-17">
 													<span class="mtext-107 cl2 p-r-20">
-														Ariana Grande
+														Quiyired1907@gmail.com
 													</span>
 
                                                     <span class="fs-18 cl11">
@@ -259,25 +258,18 @@
                                                 </div>
 
                                                 <p class="stext-102 cl6">
-                                                    Quod autem in homine praestantissimum atque optimum est, id
-                                                    deseruit. Apud ceteros autem philosophos
+                                                Sản phẩm rất tốt
                                                 </p>
                                             </div>
                                         </div>
 
                                         <!-- Add review -->
                                         <form class="w-full">
-                                            <h5 class="mtext-108 cl2 p-b-7">
-                                                Add a review
-                                            </h5>
-
-                                            <p class="stext-102 cl6">
-                                                Your email address will not be published. Required fields are marked *
-                                            </p>
+                                            
 
                                             <div class="flex-w flex-m p-t-50 p-b-23">
 												<span class="stext-102 cl3 m-r-16">
-													Your Rating
+                                                    Đánh giá của bạn
 												</span>
 
                                                 <span class="wrap-rating fs-18 cl11 pointer">
@@ -292,13 +284,13 @@
 
                                             <div class="row p-b-25">
                                                 <div class="col-12 p-b-5">
-                                                    <label class="stext-102 cl3" for="review">Your review</label>
+                                                    <label class="stext-102 cl3" for="review">Đánh giá của bạn</label>
                                                     <textarea class="size-110 bor8 stext-102 cl2 p-lr-20 p-tb-10"
                                                               id="review" name="review"></textarea>
                                                 </div>
 
                                                 <div class="col-sm-6 p-b-5">
-                                                    <label class="stext-102 cl3" for="name">Name</label>
+                                                    <label class="stext-102 cl3" for="name">Tên</label>
                                                     <input class="size-111 bor8 stext-102 cl2 p-lr-20" id="name"
                                                            type="text" name="name">
                                                 </div>
@@ -312,7 +304,7 @@
 
                                             <button
                                                 class="flex-c-m stext-101 cl0 size-112 bg7 bor11 hov-btn3 p-lr-15 trans-04 m-b-10">
-                                                Submit
+                                               Gửi
                                             </button>
                                         </form>
                                     </div>
@@ -326,9 +318,7 @@
 
         <div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
 
-            <span class="stext-107 cl6 p-lr-25">
-				Categories: {{ $product->menu->name }}
-			</span>
+            
         </div>
     </section>
 
@@ -336,7 +326,7 @@
         <div class="container">
             <div class="p-b-45">
                 <h3 class="ltext-106 cl5 txt-center">
-                    Related Products
+                    Tất cả sản phẩm
                 </h3>
             </div>
 

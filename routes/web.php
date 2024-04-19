@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\Slidercontroller;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\CartController;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
 //chỉ cần gõ nó sẽ gợi ý
@@ -53,20 +54,22 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
             #upload
     
     Route::post('upload/services', [UploadController::class, 'store'])->name('upload.store');
-    });
- 
-    #cart
-        Route::get('customers', [CartController::class, 'index'])->name('dsdh');
-        Route::get('customers/view/{customer}', [CartController::class, 'show']);
 });
+
+#cart
+    // Route::get('customers', [CartController::class, 'index'])->name('customer.cart');
+    // Route::get('customers/view/{customer}', [CartController::class, 'show'])->name('customer.show');
+    Route::get('customers', [Customer::class, 'index'])->name('customer.cart');
+    Route::get('customers/view/{customer}', [Customer::class, 'show'])->name('customer.show');
+    });
 #giao dien
     Route::get('home', [App\Http\Controllers\MainController::class, 'index'] );
 #lodgiaodien
 Route::post('/services/load-product', [App\Http\Controllers\MainController::class, 'loadProduct']);
 Route::get('danh-muc/{id}-{slug}.html', [App\Http\Controllers\MenuController::class, 'index']);
 Route::get('san-pham/{id}-{slug}.html', [App\Http\Controllers\ProductController::class, 'index']);
-Route::post('addcart', [App\Http\Controllers\CartController::class, 'index'])->name('route.cart');
+Route::post('add-cart', [App\Http\Controllers\CartController::class, 'index'])->name('route.cart');
 Route::get('carts', [App\Http\Controllers\CartController::class, 'show'])->name('route.show');
-Route::post('updatecart', [App\Http\Controllers\CartController::class, 'update'])->name('route.update');
+Route::post('update-cart', [App\Http\Controllers\CartController::class, 'update'])->name('route.update');
 Route::get('carts/delete/{id}', [App\Http\Controllers\CartController::class, 'remove'])->name('route.delete');
 Route::post('carts', [App\Http\Controllers\CartController::class, 'addCart'])->name('route.add');

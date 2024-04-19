@@ -141,7 +141,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </div>
 </footer>
 
-
+@foreach($products as $key => $product)
 <!-- Back to top -->
 <div class="btn-back-to-top" id="myBtn">
     <span class="symbol-btn-back-to-top">
@@ -150,6 +150,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </div>
 
 <!-- Modal1 -->
+
 <div class="wrap-modal1 js-modal1 p-t-60 p-b-20">
     <div class="overlay-modal1 js-hide-modal1"></div>
 
@@ -158,7 +159,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             <button class="how-pos3 hov3 trans-04 js-hide-modal1">
                 <img src="{{asset('public/teamplate/images/icons/icon-close.png')}}" alt="CLOSE">
             </button>
-
             <div class="row">
                 <div class="col-md-6 col-lg-7 p-b-30">
                     <div class="p-l-25 p-r-30 p-lr-0-lg">
@@ -167,52 +167,38 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             <div class="wrap-slick3-arrows flex-sb-m flex-w"></div>
 
                             <div class="slick3 gallery-lb">
-                                <div class="item-slick3" data-thumb="{{asset('public/teamplate/images/product-detail-01.jpg')}}">
+                               
+                                <div class="item-slick3" data-thumb="/hoclaravel/public/{{$product->thumb}}" alt="{{ $product->name }}">
                                     <div class="wrap-pic-w pos-relative">
-                                        <img src="{{asset('public/teamplate/images/product-detail-01.jpg')}}" alt="IMG-PRODUCT">
+                                        <img src="/hoclaravel/public{{ $product->thumb }}" alt="{{ $product->name }}">
 
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{asset('public/teamplate/images/product-detail-01.jpg')}}">
+                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04"  href="/hoclaravel/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html" >
+                                            {{ $product->content }}
                                             <i class="fa fa-expand"></i>
                                         </a>
                                     </div>
                                 </div>
-
-                                <div class="item-slick3" data-thumb="{{asset('public/teamplate/images/product-detail-02.jpg')}}">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="{{asset('public/teamplate/images/product-detail-02.jpg')}}" alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{asset('public/teamplate/images/product-detail-02.jpg')}}">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
-
-                                <div class="item-slick3" data-thumb="{{asset('public/teamplate/images/product-detail-03.jpg')}}">
-                                    <div class="wrap-pic-w pos-relative">
-                                        <img src="{{asset('public/teamplate/images/product-detail-03.jpg')}}" alt="IMG-PRODUCT">
-
-                                        <a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="{{asset('public/teamplate/images/product-detail-03.jpg')}}">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                              
+                               
                             </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-md-6 col-lg-5 p-b-30">
+                  
                     <div class="p-r-50 p-t-5 p-lr-0-lg">
-                        <h4 class="mtext-105 cl2 js-name-detail p-b-14">
-                            Lightweight Jacket
+
+                        <h4 class="mtext-105 cl2 js-name-detail p-b-14" href="/hoclaravel/san-pham/{{ $product->id }}-{{ Str::slug($product->name, '-') }}.html">
+                            {{ $product->name }}
                         </h4>
 
                         <span class="mtext-106 cl2">
-                            $58.79
+                          {!!  \App\Helpers\Helper::price($product->price, $product->price_sale)  !!}
                         </span>
 
                         <p class="stext-102 cl3 p-t-23">
-                            Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat.
+                        {{$product->content}}
                         </p>
                         
                         <!--  -->
@@ -297,11 +283,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             </a>
                         </div>
                     </div>
+                  
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
+@endforeach
+
 
 <!--===============================================================================================-->	
 <script src="{{asset('public/teamplate/vendor/jquery/jquery-3.2.1.min.js')}}"></script>
@@ -380,7 +370,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     $('.js-addcart-detail').each(function(){
         var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
         $(this).on('click', function(){
-            swal(nameProduct, "is added to cart !", "success");
+            swal(nameProduct, " Add to cart !", "success");
         });
     });
 

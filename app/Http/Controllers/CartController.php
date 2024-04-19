@@ -24,7 +24,6 @@ class CartController extends Controller
         }
 
         return redirect('/carts');
-        
     }
 
     public function show()
@@ -32,7 +31,7 @@ class CartController extends Controller
         $products = $this->cartService->getProduct();
 
         return view('carts.list', [
-            'title' => 'Giỏ Hàng',
+            'title' => 'Đơn hàng',
             'products' => $products,
             'carts' => Session::get('carts')
         ]);
