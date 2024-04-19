@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\Slidercontroller;
 use App\Http\Controllers\Admin\UploadController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CustomerController;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Route;
 
@@ -59,8 +60,8 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
 #cart
     // Route::get('customers', [CartController::class, 'index'])->name('customer.cart');
     // Route::get('customers/view/{customer}', [CartController::class, 'show'])->name('customer.show');
-    Route::get('customers', [Customer::class, 'index'])->name('customer.cart');
-    Route::get('customers/view/{customer}', [Customer::class, 'show'])->name('customer.show');
+    Route::get('customers', [CustomerController::class, 'index'])->name('customer.cart');
+    Route::get('customers/view/{customer}', [CustomerController::class, 'show'])->name('customer.show');
     });
 #giao dien
     Route::get('home', [App\Http\Controllers\MainController::class, 'index'] );
