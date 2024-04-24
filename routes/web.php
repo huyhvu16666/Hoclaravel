@@ -57,8 +57,7 @@ Route::middleware(['auth'])->group(function(){///auth chứ ko phải admin... a
     Route::post('upload/services', [UploadController::class, 'store'])->name('upload.store');
 });
 #cart
-    // Route::get('customers', [CartController::class, 'index'])->name('customer.cart');
-    // Route::get('customers/view/{customer}', [CartController::class, 'show'])->name('customer.show');
+   
     Route::get('customers', [CustomerController::class, 'index'])->name('customer.cart');
     Route::get('customers/view/{customer}', [CustomerController::class, 'showall'])->name('customer.showall');
     Route::get('add', [CustomerController::class, 'create'])->name('customer.add');
